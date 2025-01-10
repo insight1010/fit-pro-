@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FitPro - Тренер нового поколения</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -222,6 +223,11 @@
     </div>
 
     <script>
+        // Отключаем вертикальные свайпы в Telegram WebApp
+        if (window.Telegram && window.Telegram.WebApp) {
+            Telegram.WebApp.disableVerticalSwipes();
+        }
+
         function showSection(sectionId) {
             // Скрываем все секции
             document.querySelectorAll('section').forEach(section => {
